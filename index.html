@@ -1,106 +1,92 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Biodata Saya - Website Kreatif</title>
-  <!-- Animate.css untuk animasi -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- AOS (Animate On Scroll) untuk animasi saat scroll -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Keren - [Nama Kamu]</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-  <!-- Header & Navigasi -->
-  <header>
-    <nav>
-      <ul>
-         <li><a href="#home">Home</a></li>
-         <li><a href="#about">Biodata</a></li>
-         <li><a href="#news">Berita Viral</a></li>
-         <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#news">Berita Viral</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="hero animate__animated animate__fadeIn">
+            <h1>Halo, Saya [Nama Kamu]</h1>
+            <p>Selamat datang di website biodata saya yang penuh dengan kreativitas dan animasi!</p>
+            <button class="cta animate__animated animate__bounce">Jelajahi</button>
+        </div>
+    </header>
 
-  <!-- Hero Section dengan Efek 3D -->
-  <section id="home" class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1 class="animate__animated animate__fadeInDown">Selamat Datang di Website Saya</h1>
-      <p class="animate__animated animate__fadeInUp">
-        Temukan biodata, berita viral, dan banyak lagi dengan desain interaktif dan modern!
-      </p>
-    </div>
-    <!-- Container untuk 3D canvas -->
-    <div class="hero-3d" id="hero3d"></div>
-  </section>
+    <section id="about">
+        <h2 class="animate__animated animate__fadeInLeft">Tentang Saya</h2>
+        <div class="about-content">
+            <img src="profile.jpg" alt="Foto Profil" class="animate__animated animate__fadeIn">
+            <p class="animate__animated animate__fadeInRight">Saya adalah seorang [profesi/pekerjaan] yang sangat passionate di bidang [bidang yang kamu tekuni]. Saya suka belajar hal baru dan selalu mencari tantangan untuk mengembangkan diri.</p>
+        </div>
+    </section>
 
-  <!-- Biodata / Tentang Saya -->
-  <section id="about" class="about" data-aos="fade-right">
-    <h2>Tentang Saya</h2>
-    <div class="biodata">
-      <!-- Ganti dengan foto profil anime -->
-      <img src="https://via.placeholder.com/150/ff69b4/000000?text=Anime+Profile" alt="Foto Profil" class="profile-img">
-      <div class="bio-details">
-         <p><strong>Nama:</strong> [zahva]</p>
-         <p><strong>Umur:</strong> [15]</p>
-         <p><strong>Profesi:</strong> [Pelajar]</p>
-         <p><strong>Hobi:</strong> [main game]</p>
-         <p><strong>Deskripsi:</strong> Saya adalah seorang [profesi] yang bersemangat dalam bidang [bidang] dan memiliki kreativitas tinggi dalam membuat karya digital. Website ini dibuat untuk menampilkan biodata dan berita viral dengan desain interaktif dan modern.</p>
-      </div>
-    </div>
-  </section>
+    <section id="portfolio">
+        <h2 class="animate__animated animate__fadeInLeft">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item animate__animated animate__zoomIn">
+                <img src="project1.jpg" alt="Proyek 1">
+                <p>Proyek 1</p>
+            </div>
+            <div class="portfolio-item animate__animated animate__zoomIn">
+                <img src="project2.jpg" alt="Proyek 2">
+                <p>Proyek 2</p>
+            </div>
+            <div class="portfolio-item animate__animated animate__zoomIn">
+                <img src="project3.jpg" alt="Proyek 3">
+                <p>Proyek 3</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Berita Viral -->
-  <section id="news" class="news" data-aos="fade-left">
-    <h2>Berita Viral</h2>
-    <div class="news-container">
-      <!-- Berita TikTok -->
-      <article class="news-item animate__animated animate__zoomIn">
-         <img src="https://via.placeholder.com/300x200" alt="Berita TikTok">
-         <h3>Trending di TikTok</h3>
-         <p>Inilah berita viral terbaru dari TikTok yang sedang hangat diperbincangkan...</p>
-         <a href="https://www.tiktok.com" target="_blank">Baca Selengkapnya</a>
-      </article>
-      <!-- Berita Instagram -->
-      <article class="news-item animate__animated animate__zoomIn">
-         <img src="https://via.placeholder.com/300x200" alt="Berita Instagram">
-         <h3>Viral di Instagram</h3>
-         <p>Temukan berita menarik dan tren terbaru yang sedang viral di Instagram...</p>
-         <a href="https://www.instagram.com" target="_blank">Baca Selengkapnya</a>
-      </article>
-      <!-- Berita dari X/Twitter -->
-      <article class="news-item animate__animated animate__zoomIn">
-         <img src="https://via.placeholder.com/300x200" alt="Berita X">
-         <h3>Update dari X</h3>
-         <p>Dapatkan informasi terbaru dan trending news yang sedang hangat dibicarakan di X...</p>
-         <a href="https://twitter.com" target="_blank">Baca Selengkapnya</a>
-      </article>
-    </div>
-  </section>
+    <section id="news">
+        <h2 class="animate__animated animate__fadeInLeft">Berita Viral</h2>
+        <div class="news-grid">
+            <div class="news-item animate__animated animate__fadeInUp">
+                <h3>Judul Berita 1</h3>
+                <p>Deskripsi singkat tentang berita viral dari TikTok, Instagram, atau X.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+            <div class="news-item animate__animated animate__fadeInUp">
+                <h3>Judul Berita 2</h3>
+                <p>Deskripsi singkat tentang berita viral dari TikTok, Instagram, atau X.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+            <div class="news-item animate__animated animate__fadeInUp">
+                <h3>Judul Berita 3</h3>
+                <p>Deskripsi singkat tentang berita viral dari TikTok, Instagram, atau X.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Kontak -->
-  <section id="contact" class="contact" data-aos="fade-up">
-    <h2>Kontak Saya</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Nama Kamu" required>
-      <input type="email" placeholder="Email Kamu" required>
-      <textarea placeholder="Pesan Kamu" required></textarea>
-      <button type="submit" class="btn">Kirim Pesan</button>
-    </form>
-  </section>
+    <section id="contact">
+        <h2 class="animate__animated animate__fadeInLeft">Kontak</h2>
+        <form class="contact-form animate__animated animate__fadeInUp">
+            <input type="text" placeholder="Nama Kamu" required>
+            <input type="email" placeholder="Email Kamu" required>
+            <textarea placeholder="Pesan Kamu" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Biodata Saya. All Rights Reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2023 [Nama Kamu]. All rights reserved.</p>
+    </footer>
 
-  <!-- Three.js untuk Efek 3D -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- AOS JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <!-- Custom JavaScript -->
-  <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
