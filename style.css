@@ -157,43 +157,4 @@ section h2 {
   border-radius: 5px;
   font-size: 1em;
   outline: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.contact textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-.btn {
-  padding: 15px;
-  background: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #2980b9;
-}
-
-/* Footer */
-footer {
-  background: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5em;
-  }
-  .hero p {
-    font-size: 1em;
-  }
-  .biodata {
-    flex-direction: column;
-  }
-}
+  box-shadow: 0 2
