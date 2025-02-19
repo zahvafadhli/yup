@@ -1,327 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Keren!</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-            cursor: none;
-        }
-
-        :root {
-            --primary: #ff6b6b;
-            --secondary: #4ecdc4;
-            --accent: #ffe66d;
-        }
-
-        body {
-            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            mix-blend-mode: difference;
-            z-index: 999;
-        }
-
-        .cursor-trail {
-            position: fixed;
-            pointer-events: none;
-            font-size: 20px;
-            opacity: 0.7;
-            animation: trail 0.5s linear forwards;
-        }
-
-        @keyframes trail {
-            to {
-                transform: translateY(-50px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floating-text {
-            position: absolute;
-            color: rgba(255,255,255,0.1);
-            font-size: 15vw;
-            font-weight: 900;
-            animation: float 20s infinite linear;
-            user-select: none;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-
-        .profile-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transform-style: preserve-3d;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-card:hover {
-            transform: perspective(1000px) rotateY(10deg) rotateX(10deg);
-        }
-
-        .avatar {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 1rem auto;
-            border: 3px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px var(--accent);
-        }
-
-        .section {
-            padding: 5rem 10%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .skill-bar {
-            background: rgba(255,255,255,0.1);
-            height: 40px;
-            border-radius: 20px;
-            margin: 1rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            width: 0;
-            transition: all 1s ease;
-            position: relative;
-        }
-
-        .skill-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3));
-            animation: shine 2s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .floating-element {
-            position: absolute;
-            animation: float 5s infinite ease-in-out;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .input-group {
-            margin: 1.5rem 0;
-            position: relative;
-        }
-
-        .input-group input,
-        .input-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: transparent;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 10px;
-            color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .input-group label {
-            position: absolute;
-            left: 1rem;
-            top: 1rem;
-            padding: 0 0.5rem;
-            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .input-group input:focus,
-        .input-group textarea:focus,
-        .input-group input:valid,
-        .input-group textarea:valid {
-            border-color: var(--accent);
-            outline: none;
-        }
-
-        .input-group input:focus ~ label,
-        .input-group textarea:focus ~ label,
-        .input-group input:valid ~ label,
-        .input-group textarea:valid ~ label {
-            transform: translateY(-1.5rem);
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
-
-        .btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            transform: translateX(-100%);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover::after {
-            transform: translateX(0);
-        }
-
-    </style>
+    <title>Website dalam Pengembangan</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cursor"></div>
+    <header>
+        <div class="container">
+            <h1>Website Kami Sedang dalam Pengembangan</h1>
+            <p>Kami sedang bekerja keras untuk memberikan pengalaman terbaik untuk Anda.</p>
+        </div>
+    </header>
 
-    <section class="hero">
-        <div class="floating-text">CREATIVE</div>
-        <div class="profile-card">
-            <div class="avatar"></div>
-            <h1 data-aos="zoom-in">Your Name</h1>
-            <p data-aos="zoom-in" data-aos-delay="200">Web Developer & Designer</p>
+    <section class="countdown">
+        <div class="container">
+            <h2>Website akan segera hadir dalam:</h2>
+            <div id="timer">
+                <div><span id="days"></span>Hari</div>
+                <div><span id="hours"></span>Jam</div>
+                <div><span id="minutes"></span>Menit</div>
+                <div><span id="seconds"></span>Detik</div>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="contact-form">
-            <h2>Contact Me</h2>
-            <form>
-                <div class="input-group">
-                    <input type="text" required>
-                    <label>Name</label>
-                </div>
-                <div class="input-group">
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-group">
-                    <textarea required rows="5"></textarea>
-                    <label>Message</label>
-                </div>
-                <button class="btn">Send Message</button>
+    <section class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <p>Jika Anda memiliki pertanyaan atau ingin mendapatkan informasi lebih lanjut, silakan hubungi kami.</p>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nama Anda" required>
+                <input type="email" id="email" placeholder="Email Anda" required>
+                <textarea id="message" placeholder="Pesan Anda" required></textarea>
+                <button type="submit">Kirim Pesan</button>
             </form>
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: false
-        });
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nama Perusahaan. All rights reserved.</p>
+        </div>
+    </footer>
 
-        // Custom cursor effect
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
-            
-            // Create trail effect
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.left = e.pageX + 'px';
-            trail.style.top = e.pageY + 'px';
-            trail.innerHTML = ['🌟', '💻', '🎨', '🚀'][Math.floor(Math.random()*4)];
-            document.body.appendChild(trail);
-            
-            setTimeout(() => trail.remove(), 500);
-        });
-
-        // Skill bar animation
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.skill-fill').forEach(bar => {
-                const rect = bar.getBoundingClientRect();
-                if(rect.top < window.innerHeight) {
-                    bar.style.width = bar.parentElement.getAttribute('data-percent');
-                }
-            });
-        });
-
-        // Floating elements
-        const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d'];
-        for(let i = 0; i < 50; i++) {
-            const element = document.createElement('div');
-            element.className = 'floating-element';
-            element.style.width = Math.random() * 30 + 'px';
-            element.style.height = element.style.width;
-            element.style.background = colors[Math.floor(Math.random()*3)];
-            element.style.left = Math.random() * 100 + '%';
-            element.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(element);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
